@@ -1,6 +1,9 @@
 {
   "name": "wdr-app",
   "private": true,
+  "scripts": {
+    "start": "rails s"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
     "@rails/actioncable": "^6.0.0",
