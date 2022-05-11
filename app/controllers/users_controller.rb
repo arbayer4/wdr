@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+    render json: {users: @users}
   end
 
   # GET /users/1 or /users/1.json
@@ -56,6 +57,17 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def verify
+    user_id = params["user_id"]
+    user = User.find(user_id)
+    if user
+      user["verified"] = true
+      user.save
+    end
+    render json: {user_verified: user}
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

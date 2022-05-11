@@ -1,0 +1,10 @@
+<%if @status=="Confirmed"%>
+<h4>You are confirmed for the game on <%=@game['date'].strftime("%a %-m/%-d")%>.</h4>
+<p>Game will be run if 10 people are signed up by 6pm.</p>
+<p>Cost: $8-10 depending on number of players. Please bring cash.</p>
+<p>Location: 2741 S Kegg Road, Bloomington, IN</p>
+<% else %>
+<h4>You are #<%=@user["order"]-15%> on for the waitlist for the game on <%=@game['date'].strftime("%a %-m/%-d")%>.
+You will get an email if enough people cancel their reservation.</h4>
+
+<% end %>

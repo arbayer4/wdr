@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  user: one
+  signed_up_at: 2022-02-24 09:28:09
+  order: 1
+
+two:
+  game: two
+  user: two
+  signed_up_at: 2022-02-24 09:28:09
+  order: 1

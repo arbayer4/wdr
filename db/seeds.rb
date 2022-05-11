@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.create(email: "andy.brogan.bayer@gmail.com", password: "Password12345", firstname: "Andy", lastname: "Bayer", phone: "(260)-449-1295", skill_level: 6, is_admin: true, emergency_contact_name: "Chelsea Blanchard", emergency_contact_phone: "(260)-710-3848")
