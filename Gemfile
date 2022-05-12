@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use Json Web Token (JWT) for token based authentication
+gem 'jwt'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -54,4 +56,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rack-cors", :require => 'rack/cors'
-gem 'rails_same_site_cookie', '~> 0.1.9'
+# gem 'rails_same_site_cookie', '~> 0.1.9'

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
 
+  post '/auth/login', to: 'authentication#login'
+  get '/auth/verify', to: 'authentication#verify'
+
   get "/games", to: "games#get_games"
   post "/games", to: "games#add_games"
   post "/add-player-to-game", to: "games#add_player_to_game"

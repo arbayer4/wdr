@@ -1,6 +1,5 @@
 class GamesController < ApplicationController 
-  include CurrentUserConcern
-
+  before_action :authorize_request
 
   def get_games
     today = DateTime.current
