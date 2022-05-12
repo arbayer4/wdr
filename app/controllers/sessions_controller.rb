@@ -3,9 +3,10 @@ class SessionsController < ApplicationController
   def create
     user = User.where(email: params["user"]["email"]).first
     .try(:authenticate, params["user"]["password"])
-
+    logger.info "User: #{user.inspect}"
     if user
       session[:user_id] = user.id
+      logger.info "session 2: #{session.inspect}"
       render json: {
         status: :created,
         logged_in: true,

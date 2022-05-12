@@ -7,6 +7,7 @@ module CurrentUserConcern
 
   def set_current_user
     logger.info "Setting current User"
+    logger.info "Session: #{session.inspect}"
     if session[:user_id]
       logger.info "session user"
       @current_user = User.find(session[:user_id])
