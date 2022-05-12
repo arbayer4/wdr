@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post "/invites", to: "invites#invite_players"
 
   get "/users", to: "users#index"
+  post "/users", to: "users#create"
   post "/user-verify", to: "users#verify"
 
   root to: "static#home"
