@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     verified = Invite.where(email: user_params[:email]).first
     if verified
-      verified.acceepted_at = DateTime.now
+      verified.accepted_at = DateTime.now
       @user.verified=true
     end
 
