@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     logger.info "User: #{user.inspect}"
     if user
       session[:user_id] = user.id
+      logger.info "Session user: #{session[:user_id]}"
       logger.info "session 2: #{session.inspect}"
       render json: {
         status: :created,
