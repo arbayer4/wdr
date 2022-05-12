@@ -23,6 +23,11 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    verified = Invite.where(email: user_params[:email]).first
+    if verified
+      verified.acceepted_at = DateTime.now
+      @user.verified=true
+    end
 
     if @user.save
       @token = encode({id:@user.id})
