@@ -3,6 +3,31 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # This also configures session_options for use below
+config.session_store :cookie_store, key: '_interslice_session'
+
+# Required for all session management (regardless of session_store)
+config.middleware.use ActionDispatch::Cookies
+
+config.middleware.use config.session_store, config.session_options
+
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp_settings = {
+port: 587,
+address: 'smtp.gmail.com',
+user_name: ENV['SMTP_USER_NAME'],
+password: ENV['SMTP_PASSWORD'],
+authentication: :plain,
+enable_starttls_auto: true
+}
+config.action_mailer.default_url_options = {
+host: '',
+port: 1025,
+protocol: 'http'
+}
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
